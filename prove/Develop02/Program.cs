@@ -19,7 +19,7 @@ public class Program
             "3. Load",
             "4. Save",
             "5. Quit",
-            "What would you like to do? "
+            "What would you like to do?"
         };
 
         while (menuUserInput != 5)
@@ -53,7 +53,12 @@ public class Program
                     break;
                 case "5":
                     Console.WriteLine();
-                    Console.WriteLine("Goodbye!");
+                    Console.WriteLine("'I have one day,");
+                    Console.WriteLine("if I know how to make the most of it");
+                    Console.WriteLine("I have a treasure'.");
+                    Console.WriteLine("Gabriela Mistral");
+                    Console.WriteLine();
+                    Console.WriteLine("Come back soon!");
                     return;
                 default:
                     Console.WriteLine("Invalid choice. Please try again.");

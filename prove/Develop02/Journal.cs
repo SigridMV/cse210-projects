@@ -30,6 +30,7 @@ class Journal
         newEntry._prompt = promptGenerator.GetRandomPrompt();
         Console.WriteLine(newEntry._prompt);
 
+        Console.Write("> ");
         newEntry._response = Console.ReadLine();
         Console.WriteLine();
 
