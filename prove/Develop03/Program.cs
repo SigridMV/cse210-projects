@@ -10,7 +10,7 @@ class Program
         {
             new Reference("Proverbs", "3", "5", "6","Trust in the Lord with all thine heart and lean not unto thine own understanding; in all thy ways acknowledge him, and he shall direct thy paths."),
             new Reference("1 Nephi", "3", "7", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."),
-            new Reference("Moroni", "10", "5", "And by the power of the Holy Ghost ye may know the truth of all things."),
+            new Reference("Moroni", "10", "4","5", "And by the power of the Holy Ghost ye may know the truth of all things; And when ye shall receive these things, I would exhort you that ye would ask God, the Eternal Father, in the name of Christ, if these things are not true; and if ye shall ask with a sincere heart, with real intent, having faith in Christ, he will fmanifest the truth of it unto you, by the power of the Holy Ghost."),
             new Reference("DyC", "14", "7", "And, if you keep my commandments and endure to the end you shall have eternal life, which gift is the greatest of all the gifts of God.")
         };
 
