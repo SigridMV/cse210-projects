@@ -35,8 +35,8 @@ class Scripture
 
     public void Display()
     {
-        Console.WriteLine($"{scriptureReference.GetReference()}");
         Console.WriteLine(GetScripture());
+        Console.WriteLine();
     }
 
     public bool HasWordsLeft()
