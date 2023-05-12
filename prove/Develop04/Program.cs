@@ -51,3 +51,7 @@ class Program
         }
     }
 }
+
+// Showing Creativity and Exceeding Requirements //
+// I created a list to store the questions so that they are not repeated in the reflection activity.
+//
