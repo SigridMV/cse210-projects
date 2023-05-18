@@ -7,18 +7,17 @@ public class Simple:Goals
 
       public Simple(string name, string type, int point,bool isChecked):base(name,type,point)
       {
-        this.isChecked = isChecked;
+        this.IsChecked = isChecked;
 
       }
       
       public override void Display(int i)
       {
-        if (isChecked)
+        if (IsChecked)
         {
             
-            Console.WriteLine($"{i} [X] {_name} ({_type}) ");
-            Console.WriteLine();
-            Console.WriteLine($"You have {_point} points");
+            Console.WriteLine($"{i} [X] {Name} ({Type}) ");
+           
    
         }    
         
@@ -26,13 +25,13 @@ public class Simple:Goals
         else
         {
             
-            Console.WriteLine($"{i} [ ] {_name} ({_type}) ");
+            Console.WriteLine($"{i} [ ] {Name} ({Type}) ");
             
         }
       }
 
-      public override string Saveformat()
+      public override string SaveFormat()
    {
-      return $"simpleGoals:{_name},{_type},{_point},{isChecked}";
+      return $"simpleGoals:{Name},{Type},{Point},{IsChecked}";
    }
 }

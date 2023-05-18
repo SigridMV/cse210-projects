@@ -1,64 +1,86 @@
-using System;
-using System.Collections.Generic;
 
-public class Checklist:Goals
+public class Checklist : Goals
 
 {
-      
-      public int _goalCount;
-      public int _currentGoalCount;
-      public int _bonus;
-      List<Goals> MenuList= new List<Goals>();
-      public Checklist(string name, string type, int point,int currentGoalCount,int goalCount,int bonus):base(name,type,point)
-      {
-            _goalCount = goalCount;
-            _bonus = bonus;
-            _currentGoalCount = currentGoalCount;
+
+    private int _goalCount;
+    private int _currentGoalCount;
+    private int _bonus;
+    List<Goals> MenuList = new List<Goals>();
+
+    public int GoalCount
+    {
+        get { return _goalCount; }
+        set { _goalCount = value; }
+    }
+
+    public int CurrentGoalCount
+    {
+        get { return _currentGoalCount; }
+        set { _currentGoalCount = value; }
+    }
+
+    public int Bonus
+    {
+        get { return _bonus; }
+        set { _bonus = value; }
+    }
 
 
-      }
+    public Checklist(string name, string type, int point, int currentGoalCount, int goalCount, int bonus) : base(name, type, point)
+    {
+        _goalCount = goalCount;
+        _bonus = bonus;
+        _currentGoalCount = currentGoalCount;
 
-      public override void Display(int i)
 
-      {
-            if (isChecked)
+    }
+
+    public override void Display(int i)
+
+    {
+        if (IsChecked)
         {
-            Console.WriteLine($"{i} [x] {_name} ({_type}) ");
-            Console.WriteLine($"Current completed:{_currentGoalCount}/{_goalCount}");
-            Console.WriteLine($"You have  {_point} points Now");
-        }    
-        
-        
-        else
-        {   
-            Console.WriteLine($"{i} [ ] {_name} ({_type})");
-            Console.WriteLine($"Current completed:{_currentGoalCount}/{_goalCount}");
+            Console.Write($"{i} [X] {Name} ({Type}) ");
+            Console.Write($" --Current completed:{_currentGoalCount}/{_goalCount}");
+            Console.WriteLine($" You now have {Point} points.");
         }
-                        
-      }
 
-    public override string Saveformat()
-   {
-      return $"Checklist:{_name},{_type},{_point},{_currentGoalCount},{_goalCount},{_bonus}";
-   }
+
+        else
+        {
+            Console.Write($"{i} [ ] {Name} ({Type})");
+            Console.Write($" --Current completed:{_currentGoalCount}/{_goalCount}");
+            Console.WriteLine();
+        }
+
+    }
+
+    public override string SaveFormat()
+    {
+        return $"Checklist:{Name},{Type},{Point},{_currentGoalCount},{_goalCount},{_bonus}";
+    }
 
     public override int CompletedGoals()
-   {
-        if (isChecked == false) {
+    {
+        if (IsChecked == false)
+        {
             _currentGoalCount += 1;
-            if ( _currentGoalCount == _goalCount)
+            if (_currentGoalCount == _goalCount)
             {
-                isChecked = true;
-                Console.WriteLine("!!!");
-                return _point + _bonus;
-                
+                IsChecked = true;
+                Console.WriteLine("Congratulations!");
+                return Point + _bonus;
+
             }
-            else{
-                return _point;
+            else
+            {
+                return Point;
             }
         }
-        else {
+        else
+        {
             return 0;
-        }   
+        }
     }
 }

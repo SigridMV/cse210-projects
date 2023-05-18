@@ -9,19 +9,31 @@ public class Eternal:Goals
       }
       public override void Display(int i)
       {
+
+        if (IsChecked)
+        {
+            
+            Console.WriteLine($"{i} [X] {Name} ({Type}) ");
+           
+   
+        }    
         
+        
+        else
+        {
             
-            Console.WriteLine($"{i} [ ] {_name} ({_type}) ");
+            Console.WriteLine($"{i} [ ] {Name} ({Type}) ");
             
+        }
       }
 
-       public override string Saveformat()
+       public override string SaveFormat()
    {
-      return $"EternalGoals:{_name},{_type},{_point}";
+      return $"EternalGoals:{Name},{Type},{Point}{IsChecked}";
    }
    public override int CompletedGoals()
    {
-         return _point;
+         return Point;
          
       }
       

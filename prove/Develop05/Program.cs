@@ -8,10 +8,8 @@ class Program
         string userInput = "";
         List list = new List();
         SaveLoad saveload = new SaveLoad();
-        
-        // Checklist checklist = new Checklist(number,name,);
 
-        while(userInput != "6")
+        while (userInput != "6")
         {
             Console.WriteLine($"You have {list.totalPoint} points.");
             Console.WriteLine();
@@ -29,15 +27,15 @@ class Program
             if (userInput == "1")
             {
                 list.Menu();
-                           
+
             }
             else if (userInput == "2")
             {
-               list.DisplayGoals();
+                list.DisplayGoals();
             }
             else if (userInput == "3")
             {
-               saveload.Save(list.menuList); 
+                saveload.Save(list.menuList);
             }
             else if (userInput == "4")
             {
@@ -48,11 +46,16 @@ class Program
                 list.DisplayGoals();
                 Console.Write("Which goal did you accomplish? ");
                 string choice = Console.ReadLine();
-                list.totalPoint += list.menuList[int.Parse(choice)-1].CompletedGoals();
+                list.totalPoint += list.menuList[int.Parse(choice) - 1].CompletedGoals();
                 Console.WriteLine($"Congratulations! You have {list.totalPoint} points");
-                
+
 
             }
-           }
+
+            else
+            {
+                Console.WriteLine("Invalid goal selection.");
+            }
+        }
     }
 }

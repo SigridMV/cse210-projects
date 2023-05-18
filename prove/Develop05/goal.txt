@@ -1,3 +1,0 @@
-simpleGoals:test1,test1,50,False
-EternalGoals:test2,test2,50
-Checklist:test3,test3,100,0,3,500

@@ -1,49 +1,74 @@
 using System;
 using System.Collections.Generic;
 
-public class Goals
+public abstract class Goals
 {
-     public bool isChecked = false;
-      public string _name;
+    private bool isChecked;
+    private string _name;
 
-      public string _type;
+    private string _type;
 
-      public int _point;
+    private int _point;
+
+    public bool IsChecked
+    {
+        get { return isChecked; }
+        set { isChecked = value; }
+    }
+
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    public string Type
+    {
+        get { return _type; }
+        set { _type = value; }
+    }
+
+    public int Point
+    {
+        get { return _point; }
+        set { _point = value; }
+    }
 
 
+    public Goals(string name, string type, int point)
+    {
 
-   public Goals(string name, string type, int point)
-   {
-      
-      _name = name;
-      _point = point;
-      _type = type;
-   }
+        IsChecked = false;
+        Name = name;
+        Type = type;
+        Point = point;
 
-   public virtual void Display(int i)
-   {
-      
-   }
-   
-   public virtual int CompletedGoals()
-   {
-      if(isChecked == false)
-      {
-         isChecked = true;
-         return _point;
-         
-      }
-      else
-      {
-         return 0;
+    }
 
-      }
-   }
+    public virtual void Display(int i)
+    {
 
-   public virtual string Saveformat()
-   {
-      return "";
-   } 
+    }
+
+    public virtual int CompletedGoals()
+    {
+        if (isChecked == false)
+        {
+            isChecked = true;
+            return _point;
+
+        }
+        else
+        {
+            return 0;
+
+        }
+    }
+
+    public virtual string SaveFormat()
+    {
+        return "";
+    }
 }
 
 
