@@ -60,7 +60,7 @@ class Program
 
             else
             {
-                Console.WriteLine("Invalid goal selection. Try Again");
+                Console.WriteLine("Thank you for using the program! Try Again!");
             }
         }
     }
