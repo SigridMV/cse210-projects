@@ -9,9 +9,15 @@ class Program
         List list = new List();
         SaveLoad saveload = new SaveLoad();
 
+        Reflecting reflecting = new Reflecting();
+
         while (userInput != "6")
         {
-            Console.WriteLine($"You have {list.totalPoint} points.");
+            Console.WriteLine();
+            reflecting.DisplayRandomPrompt();
+            Console.WriteLine();
+
+            Console.WriteLine($"You have {list.TotalPoint} points.");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goals");
@@ -35,27 +41,32 @@ class Program
             }
             else if (userInput == "3")
             {
-                saveload.Save(list.menuList);
+                saveload.Save(list.MenuList);
             }
             else if (userInput == "4")
             {
-                saveload.Load(list.menuList);
+                saveload.Load(list.MenuList);
             }
             else if (userInput == "5")
             {
                 list.DisplayGoals();
                 Console.Write("Which goal did you accomplish? ");
                 string choice = Console.ReadLine();
-                list.totalPoint += list.menuList[int.Parse(choice) - 1].CompletedGoals();
-                Console.WriteLine($"Congratulations! You have {list.totalPoint} points");
+                list.TotalPoint += list.MenuList[int.Parse(choice) - 1].CompletedGoals();
+                Console.WriteLine($"Congratulations! You have {list.TotalPoint} points");
 
 
             }
 
             else
             {
-                Console.WriteLine("Invalid goal selection.");
+                Console.WriteLine("Invalid goal selection. Try Again");
             }
         }
     }
 }
+
+// Showing Creativity and Exceeding Requirements
+// I have incorporated the Reflecting class and using the DisplayRandomPrompt() method, 
+// this can enhance my program by adding motivational and inspirational prompts related to goal setting and achievement. 
+// The method ensures that messages are displayed randomly and without repetition until all available messages have been displayed.

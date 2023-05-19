@@ -3,15 +3,33 @@ using System.Collections.Generic;
 
 public class List
 {
-    public List<Goals> menuList = new List<Goals>();
-    public string menuInput;
+    private List<Goals> _menuList = new List<Goals>();
+    private string _menuInput;
 
-    public int totalPoint = 0;
+    private int _totalPoint = 0;
+
+    public List<Goals> MenuList
+    {
+        get { return _menuList; }
+        set { _menuList = value; }
+    }
+
+    public string MenuInput
+    {
+        get { return _menuInput; }
+        set { _menuInput = value; }
+    }
+
+    public int TotalPoint
+    {
+        get { return _totalPoint; }
+        set { _totalPoint = value; }
+    }
 
 
     public void Menu()
     {
-        while (menuInput != "4")
+        while (_menuInput != "4")
         {
             Console.WriteLine("------------------------");
             Console.WriteLine("The types of Goals are:");
@@ -22,7 +40,7 @@ public class List
 
             Console.Write("Which type of goal would you like to create? ");
 
-            menuInput = Console.ReadLine();
+            _menuInput = Console.ReadLine();
 
             string goalName;
             string goalType;
@@ -30,7 +48,7 @@ public class List
             int goalTimes = 0;
             int bonus;
 
-            switch (menuInput)
+            switch (_menuInput)
             {
                 case "1":
                     Console.Write("What is the name of your goal? ");
@@ -43,7 +61,7 @@ public class List
                     // goalnumber +=1;
                     Simple simple = new Simple(goalName, goalType, goalPoint, false);
 
-                    menuList.Add(simple);
+                    _menuList.Add(simple);
 
 
                     return;
@@ -61,7 +79,7 @@ public class List
                     Console.WriteLine();
                     Eternal eternal = new Eternal(goalName, goalType, goalPoint);
 
-                    menuList.Add(eternal);
+                    _menuList.Add(eternal);
 
                     return;
 
@@ -81,7 +99,7 @@ public class List
                     Console.Write("What is the bonus for accomplishing it that many times? ");
                     bonus = int.Parse(Console.ReadLine());
                     Checklist checklist = new Checklist(goalName, goalType, goalPoint, 0, goalTimes, bonus);
-                    menuList.Add(checklist);
+                    _menuList.Add(checklist);
 
                     return;
             }
@@ -93,7 +111,7 @@ public class List
     {
         Console.WriteLine("The goals are:");
         int i = 1;
-        foreach (Goals l in menuList)
+        foreach (Goals l in _menuList)
         {
             l.Display(i);
             i += 1;

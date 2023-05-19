@@ -6,7 +6,7 @@ public class Checklist : Goals
     private int _goalCount;
     private int _currentGoalCount;
     private int _bonus;
-    List<Goals> MenuList = new List<Goals>();
+
 
     public int GoalCount
     {
