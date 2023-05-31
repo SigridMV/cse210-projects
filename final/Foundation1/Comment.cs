@@ -11,4 +11,6 @@ class Comment
         Name = name;
         Text = text;
     }
+
+    
 }

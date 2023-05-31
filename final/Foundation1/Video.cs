@@ -28,4 +28,16 @@ class Video
         return Comments.Count;
     }
 
+        public void AddPositiveComment(string name, string text)
+    {
+        Comment comment = new Comment(name, text);
+        Comments.Add(comment);
+    }
+
+    public void AddNegativeComment(string name, string text)
+    {
+        Comment comment = new Comment(name, text);
+        Comments.Add(comment);
+    }
+
 }
